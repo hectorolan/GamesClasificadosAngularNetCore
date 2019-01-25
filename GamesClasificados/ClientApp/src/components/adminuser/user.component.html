@@ -1,0 +1,9 @@
+<mat-card>
+    <mat-card-title class="font-boldupper">Account Information</mat-card-title>
+    <!--<app-account-form #accountForm [user]="user" (saveSubmit)="saveSubmit($event)"></app-account-form>-->
+    <app-form-account #accountForm [user]="user" (saveSubmit)="saveSubmit($event)" (deleteAccountSubmit)="deleteAccountSubmit($event)"></app-form-account>
+</mat-card>
+
+<!--<button *ngIf="userHasPassword" type="button" mat-button (click)="changePasswordEmail()">Send Change Password Email</button
+<button type="button" mat-button (click)="deleteAccount()">Delete Account</button>
+<button type="button" mat-button>Terms and Conditions</button>-->

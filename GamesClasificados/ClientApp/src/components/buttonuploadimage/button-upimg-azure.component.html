@@ -1,0 +1,15 @@
+﻿<form #formButton>
+    <button mat-mini-fab (click)="inputFile.click()"><mat-icon>add_a_photo</mat-icon></button>
+    <br />
+    <mat-error> {{imageError}}</mat-error>
+    <br />{{ inputFile.value }}
+
+    <input #inputFile type="file" accept=".jpg,.jpeg,.png" (change)="onChangeInputFile(inputFile, formButton)" [style.display]="'none'">
+</form>
+<!-- Progress, image -->
+<br />
+<div>
+    <div *ngIf="loading">
+        <mat-progress-bar mode="determinate" value="0"></mat-progress-bar>
+    </div>
+</div>

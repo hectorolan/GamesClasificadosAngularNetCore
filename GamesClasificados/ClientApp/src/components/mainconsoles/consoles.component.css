@@ -1,0 +1,23 @@
+.font-normal {
+    font-family: 'Lato', sans-serif;
+}
+
+.image-container {
+  padding-left:8px;
+  padding-right:8px;
+  margin:auto;
+  text-align:center;
+  line-height:200px;
+}
+
+.image-element {
+  max-width: 100%;
+  max-height: 110px;
+  vertical-align: middle;
+}
+
+.console-element {
+  color: inherit;
+  text-decoration: inherit;
+  text-align: center;
+}

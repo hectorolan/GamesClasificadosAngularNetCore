@@ -1,0 +1,19 @@
+<h1 mat-dialog-title>Email Address</h1>
+<form  [formGroup]="getEmailForm"  *ngIf="active"  (ngSubmit)="closeSubmit()">
+  <mat-dialog-actions>
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="new email" type="email" style="width:100%;" formControlName="email" required>
+        <mat-hint *ngIf="formErrors.email" align="end">{{ formErrors.email }}</mat-hint>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="re-enter password" type="password" style="width:100%;" formControlName="password" required>
+        <mat-hint *ngIf="formErrors.password" align="end">{{ formErrors.password }}</mat-hint>
+      </mat-form-field>
+    </div>
+    <button mat-raised-button type="submit" [disabled]="!getEmailForm.valid" style="margin-bottom:8px;">Submit</button>
+    <button mat-raised-button mat-dialog-close type="button">Cancel</button>
+  </mat-dialog-actions>
+</form>

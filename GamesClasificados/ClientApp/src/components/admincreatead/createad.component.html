@@ -1,0 +1,95 @@
+<mat-card style="padding:0px;">
+    <mat-card-title style="padding:16px;" class="font-boldupper">
+        New post
+    </mat-card-title>
+    <mat-card-content class="card-element">
+      <div class="createad-element">
+        <mat-vertical-stepper [linear]="true" #stepper="matVerticalStepper">
+          <mat-step [stepControl]="firstConsoleSectionFormGroup">
+            <form [formGroup]="firstConsoleSectionFormGroup">
+              <ng-template matStepLabel>Category</ng-template>
+              <div mat-line>
+                <mat-form-field>
+                  <mat-select placeholder="Console" formControlName="console" #console required>
+                    <mat-option>-Select-</mat-option>
+                    <mat-option *ngFor="let console of consoles | hashtoarray;" [value]="console.id">
+                      {{ console.value }}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              <div mat-line>
+                <mat-form-field mat-line>
+                  <mat-select placeholder="Category" formControlName="section" required>
+                    <mat-option>-Select-</mat-option>
+                    <mat-option *ngFor="let section of sections | hashtoarray;" [value]="section.id">
+                      {{ section.value }}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              <br />
+              <div>
+                <button mat-button matStepperNext>Next</button>
+              </div>
+            </form>
+          </mat-step>
+          <mat-step [stepControl]="secondTitleDescriptionFormGroup">
+            <form [formGroup]="secondTitleDescriptionFormGroup">
+              <ng-template matStepLabel>Title / Description</ng-template>
+              <div mat-line>
+                <mat-form-field>
+                  <input matInput placeholder="Item Name" formControlName="title" required>
+                </mat-form-field>
+              </div>
+              <div mat-line>
+                <mat-form-field>
+                  <textarea matInput placeholder="Description" formControlName="description"></textarea>
+                </mat-form-field>
+              </div>
+              <div mat-line>
+                <app-btn-upimg-azure #btnUploadImage></app-btn-upimg-azure>
+              </div>
+              <br />
+              <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext>Next</button>
+              </div>
+            </form>
+          </mat-step>
+          <mat-step [stepControl]="thirdPriceFormGroup">
+            <form [formGroup]="thirdPriceFormGroup">
+              <ng-template matStepLabel>Price</ng-template>
+              <div mat-line>
+                <mat-form-field>
+                  <mat-select placeholder="Price" formControlName="price" required>
+                    <mat-option>-Select-</mat-option>
+                    <mat-option *ngFor="let price of prices" [value]="price">
+                      ${{ price }}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              <br />
+              <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext>Next</button>
+              </div>
+            </form>
+          </mat-step>
+          <mat-step>
+            <ng-template matStepLabel>Post</ng-template>
+            <h5>Check your post before submit.</h5>
+            <div>
+              <app-ad [ad]="adToSave" [adEmitter]="adEmitter"></app-ad>
+            </div>
+            <div>
+              <button mat-button (click)="onSubmit()">Submit</button>
+              <button mat-button matStepperPrevious>Back</button>
+              <button mat-button (click)="stepper.reset()">Reset</button>
+            </div>
+          </mat-step>
+        </mat-vertical-stepper>
+      </div>
+    </mat-card-content>
+</mat-card>

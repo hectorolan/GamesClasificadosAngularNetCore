@@ -1,0 +1,52 @@
+<form [formGroup]="accountSettingForm" *ngIf="active && user" (ngSubmit)="onSubmit()">
+    <div class="row">
+        <div class="col-6">
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title>Your contact information</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <strong>Name</strong>
+                    <p>{{ accountUserForm.name }}</p>
+                    <strong>Email</strong>
+                    <p>{{ accountUserForm.email }}</p>
+                    <strong>Telephone</strong>
+                    <p>{{ accountUserForm.telephone }}</p>
+                    <strong>City</strong>
+                    <p>{{ accountUserForm.city }}</p>
+                    <strong>Country</strong>
+                    <p>{{ accountUserForm.country }}</p>
+                </mat-card-content>
+                <mat-divider></mat-divider>
+                <mat-card-actions>
+                    <a mat-button href="account/editprofile">Edit Profile</a>
+                    <a mat-button style="float:right" (click)="deleteAccount()">Delete Account</a>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+        <div class="col-6">
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title>Information on Ads</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <strong>Show on Ads</strong><br />
+                    <mat-checkbox formControlName="showEmail" class="checkbox-element">Email</mat-checkbox>
+                    <mat-checkbox formControlName="showTelephone" class="checkbox-element">Telephone</mat-checkbox>
+                    <br /><strong>Prefered Contact</strong><br />
+                    <mat-checkbox formControlName="methodText" class="checkbox-element">Text</mat-checkbox>
+                    <mat-checkbox formControlName="methodCall" class="checkbox-element">Call</mat-checkbox>
+                    <mat-checkbox formControlName="methodEmail" class="checkbox-element">Email</mat-checkbox>
+                </mat-card-content>
+                <mat-card-subtitle style="color:#ff3333;">
+                    {{ formErrors.requiredData }}
+                </mat-card-subtitle>
+                <mat-divider></mat-divider>
+                <mat-card-actions>
+                    <button mat-button type="submit">Save</button>
+                    <button mat-button (click)="cancelChanges()">Cancel</button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </div>
+</form>

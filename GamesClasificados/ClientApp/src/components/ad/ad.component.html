@@ -1,0 +1,29 @@
+﻿<mat-card *ngIf="ad" style="height:485px;">
+    <button mat-mini-fab *ngIf="userid === ad.ownerId && !ad.expired" (click)="deleteAd(ad);" style="float:right;">
+        <mat-icon class="mat-24">delete</mat-icon>
+    </button>
+    <mat-card-header [style.text-decoration]="textDecoration">
+        <mat-card-title>{{ ad.title }}</mat-card-title>
+        <mat-card-subtitle>
+            <p *ngIf="ad.sectionid !== 0 && ad.consoleid !== 0 && sections && consoles" [style.text-decoration]="textDecoration">{{sections[ad.sectionId]}}, {{consoles[ad.consoleId]}}</p>
+        </mat-card-subtitle>
+    </mat-card-header>
+    <div style="height:250px; width:100%; text-align:center;">
+        <img *ngIf="ad.imageUrl" style="max-height:250px; max-width:100%" src="https://gclastorage.blob.core.windows.net/images-container/{{ ad.imageUrl }}" alt="{{ ad.title }}">
+    </div>
+    <mat-card-content>
+        <!--<div style="display:inline; vertical-align:top; padding-right: 8px; padding-bottom: 8px;">
+            <img style="width:200px;" *ngIf="ad.imageUrl" src="https://gclastorage.blob.core.windows.net/images-container/{{ ad.imageUrl }}" alt="{{ ad.title }}">
+        </div>-->
+        <div style="display:inline-block;">
+            <p>
+                <span *ngIf="ad.price !== 0" [style.text-decoration]="textDecoration">${{ ad.price }}<br /></span>
+                <span *ngIf="ad.description" [style.text-decoration]="textDecoration">{{ad.description}}<br /></span>
+                <span *ngIf="ad.ownerName" [style.text-decoration]="textDecoration">{{ad.ownerName}}<span for="" *ngIf="ad.city !== ''">, {{ad.city}}<br /></span></span>
+                <span *ngIf="ad.email" [style.text-decoration]="textDecoration">email: {{ad.email}}<br /></span>
+                <span *ngIf="ad.telephone" [style.text-decoration]="textDecoration">telephone: {{ad.telephone}}<br /></span>
+                <span *ngIf="ad.preferedContactMethod" [style.text-decoration]="textDecoration">Prefered contact method: {{ad.preferedContactMethod}}</span>
+            </p>
+        </div>
+    </mat-card-content>
+</mat-card>

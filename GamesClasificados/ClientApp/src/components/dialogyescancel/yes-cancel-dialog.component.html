@@ -1,0 +1,10 @@
+<h1 mat-dialog-title>
+  Confirm
+</h1>
+<mat-dialog-content *ngIf="message">
+  {{ message }}
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button (click)="closeSubmit(true);" mat-raised-button>Yes</button>
+  <button (click)="closeSubmit(false);" mat-raised-button>Cancel</button>
+</mat-dialog-actions>

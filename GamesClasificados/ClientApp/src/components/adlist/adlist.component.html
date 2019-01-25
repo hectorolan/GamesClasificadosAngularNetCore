@@ -1,0 +1,33 @@
+<div *ngIf="!adsToShow">
+    <mat-progress-spinner></mat-progress-spinner>
+</div>
+<!-- Load List of Ads -->
+<div *ngIf="adsToShow">
+    <!-- Navigation -->
+    <div *ngIf="pages > 1 && pagesArray" class="col-xs-12" style="float:none">
+        <div style="text-align:center;">
+            <mat-button-toggle-group #pagesToggle1="matButtonToggleGroup" (change)="pageToggleChange($event)">
+                <mat-button-toggle *ngFor="let page of pagesArray;" value="{{ page }}">
+                    <strong>{{ page }}</strong>
+                </mat-button-toggle>
+            </mat-button-toggle-group>
+        </div>
+    </div>
+    <br />
+    <div>
+        <div *ngFor="let ad of adsToShow;" class="col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-3" style="float: none; display:inline-block; vertical-align:top;">
+            <app-ad [ad]="ad"></app-ad>
+        </div>
+    </div>
+    <br />
+    <!-- Just Copy Paste from navigation-->
+    <div *ngIf="pages > 1 && pagesArray" class="col-xs-12" style="float:none">
+        <div style="text-align:center;">
+            <mat-button-toggle-group #pagesToggle2="matButtonToggleGroup" (change)="pageToggleChange($event)">
+                <mat-button-toggle *ngFor="let page of pagesArray;" value="{{ page }}">
+                    <strong>{{ page }}</strong>
+                </mat-button-toggle>
+            </mat-button-toggle-group>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+a, u {
+    text-decoration: none !important;
+}
+
+.font-normal, * {
+    font-family: 'Lato', sans-serif;
+}
+
+
+.checkbox-element {
+  font-size: 12px;
+  padding-left: 16px;
+}

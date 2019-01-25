@@ -1,0 +1,132 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'https://fonts.googleapis.com/css?family=Catamaran:900|Lato:700|Open+Sans:700|Material+Icons|Bowlby+One+SC';
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import url('../node_modules/bootstrap/dist/css/bootstrap.min.css');
+
+a {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+.PageCenter {
+  /*position: fixed;
+  left: 0px;
+  right: 0px;*/
+  max-width: 900px;
+  width: 100%;
+  margin: 0% auto;
+}
+
+.mat-drawer-inner-container {
+  overflow: hidden !important;
+}
+
+.mat-card {
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+.row {
+  margin: 0px;
+}
+
+/* Font */
+.font-boldupper {
+  /*font-family: 'Open Sans', sans-serif;*/
+  font-family: 'Bowlby One SC', cursive;
+}
+
+.font-normal {
+  font-family: 'Lato', sans-serif;
+}
+/* Font Ends */
+
+/* Sidebar */
+.side-nav-container {
+  min-height: 800px;
+}
+
+.side-nav {
+  width: 200px;
+}
+
+.side-nav-list {
+  padding: 0px !important;
+  /*background-color: darkorange;
+  padding-top: 48px;*/
+}
+
+.list-element {
+  color: whitesmoke !important;
+  background-color: #333333 !important;
+  font-size: small !important;
+  margin-bottom: 1px;
+  margin-top: 1px;
+}
+
+.list-element.active {
+  color: #333 !important;
+  background-color: whitesmoke !important;
+  font-size: large !important;
+}
+
+.list-element:hover:not(.active) {
+  color: whitesmoke;
+  background-color: #333333;
+  font-size: small;
+  margin-bottom: 1px;
+  margin-top: 1px;
+}
+
+.side-nav-content {
+  margin: 0px;
+  padding: 0px;
+  height: 100%;
+}
+/* Sidebar Ends */
+
+/* Tab */
+.toolbar-element {
+  padding: 0px !important;
+  background-color: #FFF;
+}
+
+.toolbar-element.toolbar-menu {
+  height: 42px;
+}
+
+.tab-container {
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  display: table;
+}
+
+.tab-element {
+  color: whitesmoke !important;
+  background-color: #333333 !important;
+  font-size: small !important;
+  height: 32px;
+  width: 81px;
+  border: 1px solid #AAA;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.tab-large {
+  width: 150px;
+}
+
+.tab-element.active {
+  color: #333 !important;
+  background-color: whitesmoke !important;
+}
+
+.tab-element:hover:not(.active) {
+  color: whitesmoke;
+  background-color: #333333;
+  font-size: small;
+  margin-bottom: 1px;
+  margin-top: 1px;
+}
+/* Tab Ends*/

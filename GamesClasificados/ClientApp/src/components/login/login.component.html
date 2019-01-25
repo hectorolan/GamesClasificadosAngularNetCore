@@ -1,0 +1,39 @@
+<mat-spinner *ngIf="loading" style="padding-top:128px; margin:auto;"></mat-spinner>
+<div *ngIf="!loading" style="margin-top:12px;">
+  <div style="max-width:400px; min-width:300px; margin:auto;">
+    <mat-card>
+      <mat-card-title style="text-align:center;">Log in to admin your ads!</mat-card-title>
+      <form  [formGroup]="loginForm"  *ngIf="active"  (ngSubmit)="login(emailCtrl, passwordCtrl)">
+        <mat-card-content>
+          <div style="margin:8px 0;">
+            <mat-form-field>
+              <input matInput placeholder="email" type="email" style="width:100%;" formControlName="email" #emailCtrl required>
+              <mat-hint *ngIf="formErrors.email" align="end">{{ formErrors.email }}</mat-hint>
+            </mat-form-field>
+          </div>
+          <div style="margin:8px 0;">
+            <mat-form-field>
+              <input matInput placeholder="password" type="password" style="width:100%;" formControlName="password" #passwordCtrl required>
+              <mat-hint *ngIf="formErrors.password" align="end">{{ formErrors.password }}</mat-hint>
+            </mat-form-field>
+          </div>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button type="button" (click)="forgotPassword(emailCtrl)" style="float:right; margin-bottom:8px; margin-right:4px;">Forgot Password</button>
+          <button mat-raised-button type="submit" [disabled]="!loginForm.valid" style="margin-bottom:8px;">Login</button>
+          <button mat-raised-button type="button" (click)="cancelLogin()">Cancel</button>
+        </mat-card-actions>
+        <mat-card-subtitle style="text-align:center;">
+          - or -
+        </mat-card-subtitle>
+        <mat-card-actions style="padding-left:16px; padding-right:16px;">
+          <button mat-raised-button type="button" (click)="loginGoogle()" style="width:100%; padding-left:0px;"><img src="" style="float:left;"><span><b>Sign in with Google</b></span></button>
+        </mat-card-actions>
+      </form>
+    </mat-card>
+  </div>
+  <br>
+  <div style="max-width:550px; min-width:300px; margin:auto; padding-bottom:16px;">
+    <app-sign-up></app-sign-up>
+  </div>
+</div>

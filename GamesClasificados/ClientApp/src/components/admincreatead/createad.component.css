@@ -1,0 +1,11 @@
+.font-normal, * {
+    font-family: 'Lato', sans-serif;
+}
+
+.card-element {
+}
+
+.createad-element {
+  max-width: 650px;
+  margin: auto;
+}

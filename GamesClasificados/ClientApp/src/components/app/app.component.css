@@ -1,0 +1,102 @@
+@media (max-width: 767px) {
+    /* On small screens, the nav menu spans the full width of the screen. Leave a space for it. */
+    .body-content {
+        padding-top: 50px;
+    }
+}
+
+#Header {
+  position: static;
+}
+
+.C_MAINPAGE {
+  position: static;
+  /*top: 64px;
+  margin-top: 64px;
+  overflow: auto;*/
+  width: 100%;
+  height: calc(100% - 64px);
+}
+
+#MainPage {
+  min-height: 600px;
+}
+
+#Footer {
+  position: static;
+  /* bottom: 0;*/
+  height: 50px;
+}
+
+.bar {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.spacer-element {
+  flex: 1 1 auto;
+}
+
+.container {
+  display: inline-block;
+  padding: 0px;
+  /*padding: 2px;
+    background-color: #c92d0e;
+    border: 6px solid #239AFF;
+    border-radius: 12px;*/
+}
+
+.font-format {
+  text-shadow: 0px 0px 1px #111;
+  -webkit-text-stroke: #111 1px;
+  padding-left: 3px;
+  padding-right: 0px;
+  font-weight:bold;
+  font-size:large;
+}
+
+.font-format2 {
+  font-weight: bold;
+  padding-left: 0px;
+  padding-right: 4px;
+  font-size: large;
+}
+
+.font-GAMES {
+  font-family: 'Bowlby One SC', cursive;
+  /*font-family: 'Catamaran', sans-serif;*/
+}
+
+.font-normal {
+  font-family: 'Lato', sans-serif;
+}
+
+.text-center {
+  align-content:center;
+  text-align:center;
+}
+
+.color-orange {
+  color: #ff8c00;
+}
+
+.color-blue {
+    color: #436eee;
+}
+
+.color-red-violet {
+    color: #d02090;
+}
+
+.color-yellow-green {
+    color: #adff2f;
+}
+
+.color-black {
+    color: #1F211E;
+}
+
+.color-white {
+    color: #FFF;
+}

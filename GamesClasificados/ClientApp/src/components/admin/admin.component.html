@@ -1,0 +1,28 @@
+<!-- For Big Screens -->
+<div *ngIf="togglenavService.navMode != 'push'">
+  <mat-toolbar color="" class="toolbar-element toolbar-menu">
+    <div class="tab-container">
+      <a class="tab-element tab-large" mat-list-item routerLink="/games" routerLinkActive="active" (click)="onMenuSelected();">Clasificados</a>
+      <a class="tab-element tab-large element-account" mat-list-item routerLink="/admin" routerLinkActive="active" (click)="onMenuSelected();">{{ accountName == ''? 'Account' : accountName }}</a>
+      <a class="tab-element tab-large" mat-list-item routerLink="myads" routerLinkActive="active" (click)="onMenuSelected();">My Ads</a>
+      <a class="tab-element tab-large" mat-list-item routerLink="createad" routerLinkActive="active" (click)="onMenuSelected();">Create new Ad</a>
+      <!--<a class="tab-element tab-large" mat-list-item href="account/signout">Log out</a>-->
+    </div>
+  </mat-toolbar>
+  <router-outlet></router-outlet>
+</div>
+<!-- For Small Screens -->
+<mat-sidenav-container class="side-nav-container" *ngIf="togglenavService.navMode == 'push'">
+  <mat-sidenav #navpanel class="side-nav" mode="{{ togglenavService.navMode }}" opened="{{ togglenavService.initOpened }}">
+    <mat-nav-list class="side-nav-list">
+      <a class="list-element" mat-list-item routerLink="/games" routerLinkActive="active" (click)="onMenuSelected();">Clasificados</a>
+      <a class="list-element element-account" mat-list-item routerLink="/admin" routerLinkActive="active" (click)="onMenuSelected();">{{ accountName == ''? 'Account' : accountName }}</a>
+      <a class="list-element" mat-list-item routerLink="myads" routerLinkActive="active" (click)="onMenuSelected();">My Ads</a>
+      <a class="list-element" mat-list-item routerLink="createad" routerLinkActive="active" (click)="onMenuSelected();">Create new Ad</a>
+      <!--<a class="list-element" mat-list-item href="account/signout">Log out</a>-->
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content class="side-nav-content">
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,14 @@
+<div style="padding-top:64px;">
+  <div style="max-width:500px;min-width:300px; margin:auto">
+    <mat-card>
+      <mat-card-title style="text-align:center;">Verify your email before you can play!</mat-card-title>
+      <mat-card-subtitle>
+        {{ email }}
+      </mat-card-subtitle>
+      <mat-card-actions>
+        <button mat-raised-button type="button" (click)="resendVerificationEmail()" style="margin-bottom:8px; margin-left:4px; margin-right:4px;">Send new Verification Email</button>
+        <button mat-raised-button type="button" (click)="changeEmail()">Change Email</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

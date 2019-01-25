@@ -1,0 +1,27 @@
+<!-- For Big Screens -->
+<div *ngIf="togglenavService.navMode != 'push'">
+  <mat-toolbar color="" class="toolbar-element toolbar-menu">
+    <div *ngIf="consoles" class="tab-container">
+      <a class="tab-element" *ngFor="let console of consoles | hashtoarray;" routerLink="/games/{{console.id}}" routerLinkActive="active" (click)="onMenuSelected();">
+        <div>
+          {{ console.value }}
+        </div>
+      </a>
+    </div>
+  </mat-toolbar>
+  <!-- TODO move this logic to APP.ts -->
+  <router-outlet></router-outlet>
+</div>
+<!-- For Small Screens -->
+<mat-sidenav-container class="side-nav-container" *ngIf="togglenavService.navMode == 'push'">
+  <mat-sidenav #navpanel class="side-nav" mode="{{ togglenavService.navMode }}" opened="{{ togglenavService.initOpened }}">
+    <mat-nav-list class="side-nav-list">
+      <div *ngIf="consoles">
+        <a class="list-element" *ngFor="let console of consoles | hashtoarray;" mat-list-item routerLink="/games/{{console.id}}" routerLinkActive="active" (click)="onMenuSelected();">{{ console.value }}</a>
+      </div>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content class="side-nav-content">
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

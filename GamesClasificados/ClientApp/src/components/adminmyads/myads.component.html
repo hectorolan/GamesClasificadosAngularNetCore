@@ -1,0 +1,8 @@
+<mat-card style="padding:0px;">
+  <mat-card-title style="padding:16px;" class="font-boldupper">
+    My Ads <span *ngIf="counter" class="font-boldupper">({{counter}})</span>
+  </mat-card-title>
+  <mat-card-content>
+    <app-adlist [adsEmitter]="adsEmitter"></app-adlist>
+  </mat-card-content>
+</mat-card>
