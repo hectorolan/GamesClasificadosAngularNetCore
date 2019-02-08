@@ -1,80 +1,74 @@
-<mat-card style="padding:0px;">
-  <mat-card-title style="padding:16px;" class="font-boldupper">
-    {{title}} <span *ngIf="counter" class="font-boldupper"><small>({{counter}}) Ads</small></span>
-  </mat-card-title>
-  <mat-card-content>
+  <div style="padding:16px;" class="row font-boldupper">
+    {{title}} <h3 *ngIf="counter" class="font-boldupper">({{counter}}) Ads</h3>
+  </div>
+  <div>
     <app-adlist [adsEmitter]="adsEmitter"></app-adlist>
-  </mat-card-content>
-</mat-card>
-<mat-card style="padding:0px;">
-  <mat-card-content>
-    <div class="row">
-      <div class="col-sm-3">
-        <a class="console-element" routerLink="/games/9" routerLinkActive="active">
-          <div class="image-container">
-            <img class="image-element" src="../../assets/images/3ds.jpg">
-          </div>
-          <p class="font-normal">3DS</p>
-        </a>
+  </div>
+<div class="row">
+  <div class="col-sm-3">
+    <a class="console-element" routerLink="/games/9" routerLinkActive="active">
+      <div class="image-container">
+        <img class="image-element" src="../../assets/images/3ds.jpg">
       </div>
-      <div class="col-sm-3">
-        <a class="console-element" routerLink="/games/7" routerLinkActive="active">
-          <div class="image-container">
-            <img class="image-element" src="../../assets/images/wiiu.png">
-          </div>
-          <p class="font-normal">Wii U</p>
-        </a>
+      <p class="font-normal">3DS</p>
+    </a>
+  </div>
+  <div class="col-sm-3">
+    <a class="console-element" routerLink="/games/7" routerLinkActive="active">
+      <div class="image-container">
+        <img class="image-element" src="../../assets/images/wiiu.png">
       </div>
-      <div class="col-sm-3">
-        <a class="console-element" routerLink="/games/10" routerLinkActive="active">
-          <div class="image-container">
-            <img class="image-element" src="../../assets/images/switch.jpg">
-          </div>
-          <p class="font-normal">Switch</p>
-        </a>
+      <p class="font-normal">Wii U</p>
+    </a>
+  </div>
+  <div class="col-sm-3">
+    <a class="console-element" routerLink="/games/10" routerLinkActive="active">
+      <div class="image-container">
+        <img class="image-element" src="../../assets/images/switch.jpg">
       </div>
-      <div class="col-sm-3">
-        <a class="console-element" routerLink="/games/2" routerLinkActive="active">
-          <div class="image-container">
-            <img class="image-element" src="../../assets/images/ps3.png">
-          </div>
-          <p class="font-normal">PS3</p>
-        </a>
+      <p class="font-normal">Switch</p>
+    </a>
+  </div>
+  <div class="col-sm-3">
+    <a class="console-element" routerLink="/games/2" routerLinkActive="active">
+      <div class="image-container">
+        <img class="image-element" src="../../assets/images/ps3.png">
       </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-3">
-        <a class="console-element" routerLink="/games/1" routerLinkActive="active">
-          <div class="image-container">
-            <img class="image-element" src="../../assets/images/ps4.jpg">
-          </div>
-          <p class="font-normal">PS4</p>
-        </a>
+      <p class="font-normal">PS3</p>
+    </a>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-3">
+    <a class="console-element" routerLink="/games/1" routerLinkActive="active">
+      <div class="image-container">
+        <img class="image-element" src="../../assets/images/ps4.jpg">
       </div>
-      <div class="col-sm-3">
-        <a class="console-element" routerLink="/games/6" routerLinkActive="active">
-          <div class="image-container">
-            <img class="image-element" src="../../assets/images/xbox360.jpg">
-          </div>
-          <p class="font-normal">Xbox 360</p>
-        </a>
+      <p class="font-normal">PS4</p>
+    </a>
+  </div>
+  <div class="col-sm-3">
+    <a class="console-element" routerLink="/games/6" routerLinkActive="active">
+      <div class="image-container">
+        <img class="image-element" src="../../assets/images/xbox360.jpg">
       </div>
-      <div class="col-sm-3">
-        <a class="console-element" routerLink="/games/5" routerLinkActive="active">
-          <div class="image-container">
-            <img class="image-element" src="../../assets/images/xboxone.jpg">
-          </div>
-          <p class="font-normal">Xbox One</p>
-        </a>
+      <p class="font-normal">Xbox 360</p>
+    </a>
+  </div>
+  <div class="col-sm-3">
+    <a class="console-element" routerLink="/games/5" routerLinkActive="active">
+      <div class="image-container">
+        <img class="image-element" src="../../assets/images/xboxone.jpg">
       </div>
-      <div class="col-sm-3">
-        <a class="console-element" routerLink="/games/11" routerLinkActive="active">
-          <div class="image-container">
-            <img class="image-element" src="../../assets/images/electronincs.jpg">
-          </div>
-          <p class="font-normal">Electronics</p>
-        </a>
+      <p class="font-normal">Xbox One</p>
+    </a>
+  </div>
+  <div class="col-sm-3">
+    <a class="console-element" routerLink="/games/11" routerLinkActive="active">
+      <div class="image-container">
+        <img class="image-element" src="../../assets/images/electronincs.jpg">
       </div>
-    </div>
-  </mat-card-content>
-</mat-card>
+      <p class="font-normal">Electronics</p>
+    </a>
+  </div>
+</div>

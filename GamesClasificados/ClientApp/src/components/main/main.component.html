@@ -1,7 +1,7 @@
 <!-- For Big Screens -->
 <div *ngIf="togglenavService.navMode != 'push'">
   <mat-toolbar color="" class="toolbar-element toolbar-menu">
-    <div *ngIf="consoles" class="tab-container">
+    <div *ngIf="consoles" class="tab-container PageMaxSize">
       <a class="tab-element" *ngFor="let console of consoles | hashtoarray;" routerLink="/games/{{console.id}}" routerLinkActive="active" (click)="onMenuSelected();">
         <div>
           {{ console.value }}
@@ -9,8 +9,10 @@
       </a>
     </div>
   </mat-toolbar>
-  <!-- TODO move this logic to APP.ts -->
-  <router-outlet></router-outlet>
+  <mat-divider></mat-divider>
+  <div class="PageCenter">
+    <router-outlet></router-outlet>
+  </div>
 </div>
 <!-- For Small Screens -->
 <mat-sidenav-container class="side-nav-container" *ngIf="togglenavService.navMode == 'push'">

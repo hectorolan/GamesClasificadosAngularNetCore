@@ -1,17 +1,19 @@
-<div class="PageCenter Header" style="backface-visibility: hidden;">
+<div class="Header" style="backface-visibility: hidden;">
   <mat-toolbar color="" class="toolbar-element">
     <button *ngIf="tooglenavService.showNavToggleBtn" mat-icon-button (click)="toggleNav();">
       <i class="material-icons">menu</i>
     </button>
+    <span *ngIf="!tooglenavService.showNavToggleBtn" class="tab">
+    </span>
     <div routerLink="/games" routerLinkActive="active" class="bar">
       <!--<img src="../../images/GamesClasificadosLogo.png" style="padding: 4px; height:100%;" />-->
       <!-- The logo will be created with CSS, will be text with color -->
       <!-- Palete
-      Orange: #ff8c00
-      Red-Violet: #d02090
-      Yellow-Green: #adff2f
-      Blue: #436eee
-      -->
+    Orange: #ff8c00
+    Red-Violet: #d02090
+    Yellow-Green: #adff2f
+    Blue: #436eee
+    -->
       <div class="container">
         <span class="font-format font-GAMES color-orange">Games</span>
         <span class="font-format2 font-normal color-black">Clasificados</span>
@@ -22,9 +24,8 @@
     <a *ngIf="isLoggedIn" mat-button href="account/signout">Sign Out</a>
     <a *ngIf="!isLoggedIn" mat-button href="account/signin">Sign In</a>
   </mat-toolbar>
-  <mat-divider></mat-divider>
 </div>
-<div id="main-page" class="C_MAINPAGE PageCenter" fullscreen>
+<div id="main-page" class="C_MAINPAGE" fullscreen>
   <div id="MainPage">
     <router-outlet></router-outlet>
   </div>

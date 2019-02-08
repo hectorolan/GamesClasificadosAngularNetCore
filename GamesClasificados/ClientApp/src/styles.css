@@ -12,9 +12,17 @@ a {
   /*position: fixed;
   left: 0px;
   right: 0px;*/
-  max-width: 900px;
+  max-width: 1200px;
   width: 100%;
   margin: 0% auto;
+}
+
+.PageMaxSize {
+  max-width: 1200px;
+}
+
+.title {
+  padding: 16px;
 }
 
 .mat-drawer-inner-container {
@@ -30,7 +38,13 @@ a {
   margin: 0px;
 }
 
+.tab {
+  padding-left: 4px;
+  margin-left: 4px;
+}
+
 /* Font */
+
 .font-boldupper {
   /*font-family: 'Open Sans', sans-serif;*/
   font-family: 'Bowlby One SC', cursive;
@@ -57,25 +71,25 @@ a {
 }
 
 .list-element {
-  color: whitesmoke !important;
-  background-color: #333333 !important;
+  /*color: black !important;*/
+  /*background-color: #333333 !important;*/
   font-size: small !important;
   margin-bottom: 1px;
   margin-top: 1px;
 }
 
 .list-element.active {
-  color: #333 !important;
+  /*color: #333 !important;*/
   background-color: whitesmoke !important;
-  font-size: large !important;
+  /*font-size: large !important;*/
 }
 
 .list-element:hover:not(.active) {
-  color: whitesmoke;
-  background-color: #333333;
-  font-size: small;
-  margin-bottom: 1px;
-  margin-top: 1px;
+  /*color: whitesmoke;*/
+  /*background-color: #333333;*/
+  /*font-size: small;*/
+  /*margin-bottom: 1px;*/
+  /*margin-top: 1px;*/
 }
 
 .side-nav-content {
@@ -87,12 +101,13 @@ a {
 
 /* Tab */
 .toolbar-element {
-  padding: 0px !important;
+  padding: 0px 24px !important;
   background-color: #FFF;
+  height: 42px !important;
 }
 
 .toolbar-element.toolbar-menu {
-  height: 42px;
+  /*height: 42px;*/
 }
 
 .tab-container {
@@ -102,13 +117,18 @@ a {
   display: table;
 }
 
+.tab-container-minimized {
+  text-align: center;
+  display: table;
+}
+
 .tab-element {
-  color: whitesmoke !important;
-  background-color: #333333 !important;
+  /*color: black !important;*/
+  /*background-color: #333333 !important;*/
   font-size: small !important;
   height: 32px;
   width: 81px;
-  border: 1px solid #AAA;
+  /*border: 1px solid #AAA;*/
   display: table-cell;
   vertical-align: middle;
 }
@@ -123,9 +143,9 @@ a {
 }
 
 .tab-element:hover:not(.active) {
-  color: whitesmoke;
-  background-color: #333333;
-  font-size: small;
+  /*color: whitesmoke;*/
+  /*background-color: #333333;*/
+  /*font-size: small;*/
   margin-bottom: 1px;
   margin-top: 1px;
 }

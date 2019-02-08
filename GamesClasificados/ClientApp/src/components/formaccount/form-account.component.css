@@ -2,7 +2,7 @@ a, u {
     text-decoration: none !important;
 }
 
-.font-normal, * {
+.font-normal {
     font-family: 'Lato', sans-serif;
 }
 

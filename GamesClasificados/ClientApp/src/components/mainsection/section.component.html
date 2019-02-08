@@ -1,13 +1,14 @@
-<mat-card style="padding:0px;"> 
-  <mat-card-title class="font-boldupper" style="padding:16px;">
+<div style="padding:0px;">
+  <h3 class="font-boldupper title">
     {{title}} <span *ngIf="counter" class="font-boldupper">({{counter}})</span>
-  </mat-card-title>
-  <mat-card-content *ngIf="sections">
+  </h3>
+  <div *ngIf="sections">
     <div *ngFor="let section of sections | hashtoarray;" class="font-normal" style="display:inline-block; margin:10px;">
-      <span routerLink="/games/{{consoleid+''}}/{{section.id+''}}" routerLinkActive="active" class="font-normal">{{section.value}}
-      <span *ngIf="sectionsCounter[section.id] && sectionsCounter[section.id] !== 0" class="font-normal">({{sectionsCounter[section.id]}})</span>
+      <span routerLink="/games/{{consoleid+''}}/{{section.id+''}}" routerLinkActive="active" class="font-normal">
+        {{section.value}}
+        <span *ngIf="sectionsCounter[section.id] && sectionsCounter[section.id] !== 0" class="font-normal">({{sectionsCounter[section.id]}})</span>
       </span>
     </div>
     <app-adlist [adsEmitter]="adsEmitter"></app-adlist>
-  </mat-card-content>
-</mat-card>
+  </div>
+  </div>
