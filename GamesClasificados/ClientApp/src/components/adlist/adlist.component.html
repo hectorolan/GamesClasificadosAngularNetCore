@@ -15,9 +15,11 @@
     </div>
     <br />
     <div>
-        <div *ngFor="let ad of adsToShow;" class="col-xs-12" style="vertical-align:top;">
-            <app-ad [ad]="ad"></app-ad>
+      <div class="row">
+        <div *ngFor="let ad of adsToShow;" class="col-xs-12 col-md-6">
+          <app-ad [ad]="ad"></app-ad>
         </div>
+      </div>
     </div>
     <br />
     <!-- Just Copy Paste from navigation-->
