@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GamesClasificados", "GamesC
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebJob-AdsMaintenance", "WebJob-AdsMaintenance\WebJob-AdsMaintenance.csproj", "{B988DEA7-E566-48A4-B4DB-57F94B715554}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebJob-AdsClearing", "WebJob-AdsClearing\WebJob-AdsClearing.csproj", "{5A3D2711-3D32-4D92-8A68-2B545B72E441}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{B988DEA7-E566-48A4-B4DB-57F94B715554}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B988DEA7-E566-48A4-B4DB-57F94B715554}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B988DEA7-E566-48A4-B4DB-57F94B715554}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A3D2711-3D32-4D92-8A68-2B545B72E441}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A3D2711-3D32-4D92-8A68-2B545B72E441}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A3D2711-3D32-4D92-8A68-2B545B72E441}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A3D2711-3D32-4D92-8A68-2B545B72E441}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
