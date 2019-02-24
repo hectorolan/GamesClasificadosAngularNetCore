@@ -32,15 +32,54 @@ namespace GClaV2.Controllers.API
         // GET: api/Ads/User/5
         [HttpGet]
         [Route("~/api/ads/user/{userid}")]
-        public async Task<IActionResult> GetUserAds([FromRoute] long userid)
+        public async Task<IActionResult> GetUserAds([FromRoute] long userid, [FromQuery(Name = "active")] bool active)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
-            IEnumerable<Ad> ads = await Task.Run(() =>
+            IEnumerable<Object> ads = await Task.Run(() =>
             {
-                IEnumerable<Ad> result = this._adsService.GetAdsByUser(userid);
+                IEnumerable<Object> result;
+                if (active)
+                {
+                    result = this._adsService.GetActiveAdsByUser(userid);
+                }
+                else
+                {
+                    result = this._adsService.GetAdsByUser(userid);
+                }
+                return result;
+            });
+
+            if (ads == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(ads);
+        }
+
+        // GET: api/Ads/User/5
+        [HttpGet]
+        [Route("~/api/ads/username/{username}")]
+        public async Task<IActionResult> GetUsernameAds([FromRoute] string username, [FromQuery(Name = "active")] bool active)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            IEnumerable<Object> ads = await Task.Run(() =>
+            {
+                IEnumerable<Object> result;
+                if (active)
+                {
+                    result = this._adsService.GetActiveAdsByUsername(username);
+                }
+                else
+                {
+                    result = this._adsService.GetAdsByUsername(username);
+                }
                 return result;
             });
 

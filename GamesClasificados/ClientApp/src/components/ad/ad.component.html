@@ -1,28 +1,30 @@
-<mat-card *ngIf="ad" style="width:100%; height:250px;">
+<div *ngIf="ad" style="width:100%; height:200px;">
   <button mat-mini-fab *ngIf="userid === ad.ownerId && !ad.expired" (click)="deleteAd(ad);" style="float:right;">
     <mat-icon class="mat-24">delete</mat-icon>
   </button>
-  <mat-card-content style="height:100%; display:flex; align-items:center;">
-      <div style="max-width:250px; text-align:center; display:inline;" class="col-6">
+  <div style="height:100%; display:flex;">
+      <div style="max-width:176px; margin:12px; padding:0px;" class="col-6">
         <img *ngIf="ad.imageUrl" style="max-width:100%;" src="https://gclastorage.blob.core.windows.net/images-container/{{ ad.imageUrl }}" alt="{{ ad.title }}">
       </div>
-      <div style="display:inline;">
+      <div style="display:inline; padding-top:12px; padding-bottom:12px;">
         <div [style.text-decoration]="textDecoration">
-          <h4>{{ ad.title }}</h4>
+          <h5>{{ ad.title }}</h5>
           <strong>
-            <span *ngIf="ad.sectionid !== 0 && ad.consoleid !== 0 && sections && consoles" [style.text-decoration]="textDecoration">{{sections[ad.sectionId]}}, {{consoles[ad.consoleId]}}</span>
+            <span *ngIf="ad.sectionid !== 0 && ad.consoleid !== 0 && sections && consoles" [style.text-decoration]="textDecoration" class="font-normal adtext">{{sections[ad.sectionId]}}, {{consoles[ad.consoleId]}}</span>
           </strong>
         </div>
-        <div style="display:inline-block;">
+        <div style="display:inline-block; max-height:100%;">
           <p>
-            <span *ngIf="ad.price !== 0" [style.text-decoration]="textDecoration">${{ ad.price }}<br /></span>
-            <span *ngIf="ad.description" [style.text-decoration]="textDecoration">{{ad.description}}<br /></span>
-            <span *ngIf="ad.ownerName" [style.text-decoration]="textDecoration">{{ad.ownerName}}<span for="" *ngIf="ad.city !== ''">, {{ad.city}}<br /></span></span>
-            <span *ngIf="ad.email" [style.text-decoration]="textDecoration">email: {{ad.email}}<br /></span>
-            <span *ngIf="ad.telephone" [style.text-decoration]="textDecoration">telephone: {{ad.telephone}}<br /></span>
-            <span *ngIf="ad.preferedContactMethod" [style.text-decoration]="textDecoration">Prefered contact method: {{ad.preferedContactMethod}}</span>
+            <span *ngIf="ad.price !== 0" [style.text-decoration]="textDecoration" class="font-normal adtext">${{ ad.price }} <span for="" *ngIf="ad.city !== ''" class="font-normal adtext">{{ad.city}}<br /></span></span>
+            <span *ngIf="ad.description" [style.text-decoration]="textDecoration" class="font-normal adtext">{{ad.description}}<br /></span>
+            <span *ngIf="ad.ownerName" [style.text-decoration]="textDecoration" class="font-normal adtext">
+              {{ad.ownerName}} (<a *ngIf="ad.username" routerLink="/games/user/{{ad.username}}" routerLinkActive="active"><span [style.text-decoration]="textDecoration" class="font-normal adtext">{{ad.username}}</span></a>)<br />
+            </span>
+            <span *ngIf="ad.email" [style.text-decoration]="textDecoration" class="font-normal adtext">email: {{ad.email}}<br /></span>
+            <span *ngIf="ad.telephone" [style.text-decoration]="textDecoration" class="font-normal adtext">telephone: {{ad.telephone}}<br /></span>
+            <!--<span *ngIf="ad.preferedContactMethod" [style.text-decoration]="textDecoration">Prefered contact method: {{ad.preferedContactMethod}}</span><br /> -->
           </p>
         </div>
       </div>
-  </mat-card-content>
-</mat-card>
+  </div>
+</div>

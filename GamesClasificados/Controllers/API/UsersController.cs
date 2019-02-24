@@ -77,7 +77,21 @@ namespace GClaV2.Controllers.API
 
             return NoContent();
         }
+        
+        // GET: api/Users?username={username}
+        [HttpGet()]
+        public async Task<IActionResult> GetUser([FromQuery] string username)
+        {
+            if (!ModelState.IsValid || string.IsNullOrEmpty(username))
+            {
+                return BadRequest(ModelState);
+            }
 
+            bool userExists = await _userService.UsernameExists(username);
+            
+            return Ok(userExists);
+        }
+        
         // POST: api/Users
         [HttpPost]
         public async Task<IActionResult> PostUser([FromBody] User user)

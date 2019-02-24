@@ -13,6 +13,7 @@ namespace GClaV2.Interfaces
         void AddUser(User user);
         void DeleteUser(User user, IAdsService adsService);
         Task<User> SaveUser(User user);
+        Task<bool> UsernameExists(string username);
         bool UserExists(string email);
         bool UserExists(long id);
     }

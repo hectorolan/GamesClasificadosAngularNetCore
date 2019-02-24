@@ -1,7 +1,5 @@
 import { Component, OnInit, EventEmitter } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
-import { Console } from '../../models/console';
-import { Section } from '../../models/section';
 import { IHashMap } from '../../imodels/ihashmap';
 import { Ad } from '../../models/ad';
 import { AdService } from '../../services/ad.service';

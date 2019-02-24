@@ -1,0 +1,12 @@
+<h1 mat-dialog-title>
+  Confirm
+</h1>
+<mat-dialog-content *ngIf="imgSrc">
+  <div class="img-container">
+    <img id="image" #image src="{{imgSrc}}">
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button (click)="closeSubmit(true);" mat-raised-button>Save</button>
+  <button (click)="closeSubmit(false);" mat-raised-button>Cancel</button>
+</mat-dialog-actions>

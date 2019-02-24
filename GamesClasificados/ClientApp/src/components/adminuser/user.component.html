@@ -2,7 +2,9 @@
   <h3 class="font-boldupper title">Account Information</h3>
   <!--<app-account-form #accountForm [user]="user" (saveSubmit)="saveSubmit($event)"></app-account-form>-->
   <div>
-    <app-form-account #accountForm [user]="user" (saveSubmit)="saveSubmit($event)" (deleteAccountSubmit)="deleteAccountSubmit($event)"></app-form-account>
+    <app-form-account #accountForm [user]="user"
+                      (saveSubmit)="saveSubmit($event)"
+                      (deleteAccountSubmit)="deleteAccountSubmit($event)"></app-form-account>
   </div>
 </div>
 

@@ -1,8 +1,8 @@
-﻿<form #formButton>
+<form #formButton>
     <button mat-mini-fab (click)="inputFile.click()"><mat-icon>add_a_photo</mat-icon></button>
     <br />
     <mat-error> {{imageError}}</mat-error>
-    <br />{{ inputFile.value }}
+    <br />{{ imageMessage }}
 
     <input #inputFile type="file" accept=".jpg,.jpeg,.png" (change)="onChangeInputFile(inputFile, formButton)" [style.display]="'none'">
 </form>

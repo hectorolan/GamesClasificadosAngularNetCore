@@ -1,0 +1,13 @@
+<div style="padding:0px;">
+  <div class="title">
+    <h3 class="font-boldupper">
+      {{user.name}} <span *ngIf="counter" class="font-boldupper">({{counter}} ads)</span>
+    </h3>
+    <h6 *ngIf="user.city">city: {{user.city}}</h6>
+    <h6 *ngIf="user.telephone">telephone: {{user.telephone}}</h6>
+    <h6 *ngIf="user.email">email: {{user.email}}</h6>
+  </div>
+  <div>
+    <app-adlist [adsEmitter]="adsEmitter"></app-adlist>
+  </div>
+</div>

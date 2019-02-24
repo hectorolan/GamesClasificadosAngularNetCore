@@ -26,5 +26,7 @@ namespace GClaV2.Models
         public bool ShowEmail { get; set; }
 
         public string PreferedContactMethod { get; set; }
+
+        public string Username { get; set; }
     }
 }

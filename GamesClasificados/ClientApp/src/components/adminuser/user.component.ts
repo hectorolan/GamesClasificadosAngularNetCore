@@ -10,39 +10,39 @@ import { FormAccountComponent } from '../formaccount/form-account.component';
 import { YesCancelDialogComponent } from '../dialogyescancel/yes-cancel-dialog.component';
 
 @Component({
-    selector: 'app-user',
-    templateUrl: './user.component.html',
-    styleUrls: ['./user.component.css']
+  selector: 'app-user',
+  templateUrl: './user.component.html',
+  styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
 
-    // Child component info
-    @ViewChild(FormAccountComponent)
-    private accountFormComponent: FormAccountComponent;
-    user: User = new User();
+  // Child component info
+  @ViewChild(FormAccountComponent)
+  private accountFormComponent: FormAccountComponent;
+  user: User = new User();
 
-    // Confirmation dialog
-    dialogRef: MatDialogRef<YesCancelDialogComponent>;
+  // Confirmation dialog
+  dialogRef: MatDialogRef<YesCancelDialogComponent>;
 
-    constructor(
-        private authService: AuthService,
-        private userService: UserService,
-        private snackBar: MatSnackBar,
-        private dialog: MatDialog,
-        private router: Router) {
-    }
+  constructor(
+    private authService: AuthService,
+    private userService: UserService,
+    private snackBar: MatSnackBar,
+    private dialog: MatDialog,
+    private router: Router) {
+  }
 
-    ngOnInit() {
-        this.user = this.authService.user;
-    }
-    
-    saveSubmit(data: { [key: string]: any }) {
-        this.user = data['user'];
-        this.userService.saveUser(this.user).then(() => {
-        });
-    }
+  ngOnInit() {
+    this.user = this.authService.user;
+  }
 
-    deleteAccountSubmit(data: { [key: string]: any }) {
-        this.userService.deleteUser(data['userid'], this.router);
-    }
+  saveSubmit(data: { [key: string]: any }) {
+    this.user = data['user'];
+    this.userService.saveUser(this.user).then(() => {
+    });
+  }
+
+  deleteAccountSubmit(data: { [key: string]: any }) {
+    this.userService.deleteUser(data['userid'], this.router);
+  }
 }

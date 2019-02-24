@@ -80,7 +80,7 @@
           <mat-step>
             <ng-template matStepLabel>Post</ng-template>
             <h5>Check your post before submit.</h5>
-            <div>
+            <div *ngIf="postReady">
               <app-ad [ad]="adToSave" [adEmitter]="adEmitter"></app-ad>
             </div>
             <div>

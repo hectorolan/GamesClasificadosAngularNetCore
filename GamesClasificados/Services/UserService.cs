@@ -46,11 +46,11 @@ namespace GClaV2.Services
         public void DeleteUser(User user, IAdsService adsService)
         {
             // Remove first all the Ads and Data
-            IEnumerable<Ad> adsToDelete = adsService.GetAdsByUser(user.ID);
-            this._dbcontext.Ads.RemoveRange(adsToDelete);
+            this._dbcontext.Ads.RemoveRange(this._dbcontext.Ads.Where(ad => ad.OwnerId == user.ID));
 
             // Then remove the user
             _dbcontext.GClaUsers.Remove(user);
+
             _dbcontext.SaveChanges();
         }
 
@@ -70,6 +70,12 @@ namespace GClaV2.Services
             return user;
         }
 
+        public async Task<bool> UsernameExists(string username)
+        {
+            bool result = await _dbcontext.GClaUsers.AnyAsync(e => e.Username == username);
+            return result;
+        }
+
         public bool UserExists(string email)
         {
             return _dbcontext.GClaUsers.Any(e => e.Email == email);
@@ -79,6 +85,5 @@ namespace GClaV2.Services
         {
             return _dbcontext.GClaUsers.Any(e => e.ID == id);
         }
-
     }
 }

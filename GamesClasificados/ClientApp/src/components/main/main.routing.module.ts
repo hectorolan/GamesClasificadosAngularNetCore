@@ -4,6 +4,7 @@ import { MainComponent } from './main.component';
 import { ConsolesComponent } from '../mainconsoles/consoles.component';
 import { SectionComponent } from '../mainsection/section.component';
 import { ShowroomComponent } from '../mainshowroom/showroom.component';
+import { UseradsComponent } from '../mainuserads/userads.component';
 import { AdsComponent } from '../mainads/ads.component';
 import { AuthService } from '../../services/auth.service';
 import { AuthGuardService } from '../../services/auth-guard.service';
@@ -16,32 +17,24 @@ const routes: Routes = [
     path: 'games',
     component: MainComponent,
     children: [
-        { path: '', component: ConsolesComponent },
-        {
-            path: 'tos',
-            component: TermOfServiceComponent
-        },
-        {
-            path: 'policy',
-            component: PolicyComponent
-        },
-        {
-            path: 'contactus',
-            component: ContactUsComponent
-        },
-        { path: ':console', component: SectionComponent },
-        { path: ':console/:section', component: ShowroomComponent },
-        { path: ':console/:section/:id', component: AdsComponent }
+      { path: '', component: ConsolesComponent },
+      { path: 'tos', component: TermOfServiceComponent },
+      { path: 'policy', component: PolicyComponent },
+      { path: 'contactus', component: ContactUsComponent },
+      { path: 'user/:id', component: UseradsComponent },
+      { path: ':console', component: SectionComponent },
+      { path: ':console/:section', component: ShowroomComponent },
+      { path: ':console/:section/:id', component: AdsComponent }
     ]
-    }
+  }
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
   providers: [
-      AuthService,
-      AuthGuardService
+    AuthService,
+    AuthGuardService
   ]
 })
 export class MainRoutingModule { }

@@ -84,15 +84,14 @@ a {
   /*font-size: large !important;*/
 }
 
-.list-element:hover:not(.active) {
-  /*color: whitesmoke;*/
-  /*background-color: #333333;*/
-  /*font-size: small;*/
-  /*margin-bottom: 1px;*/
-  /*margin-top: 1px;*/
-}
-
-.side-nav-content {
+/*.list-element:hover:not(.active) {
+    color: whitesmoke;*/
+    /*background-color: #333333;*/
+    /*font-size: small;*/
+    /*margin-bottom: 1px;*/
+    /*margin-top: 1px;
+}*/
+    .side-nav-content {
   margin: 0px;
   padding: 0px;
   height: 100%;
@@ -106,11 +105,10 @@ a {
   height: 42px !important;
 }
 
-.toolbar-element.toolbar-menu {
-  /*height: 42px;*/
-}
-
-.tab-container {
+/*height.toolbar-element.toolbar-menu {
+    : 42px;
+}*/
+    .tab-container {
   height: 100%;
   width: 100%;
   text-align: center;

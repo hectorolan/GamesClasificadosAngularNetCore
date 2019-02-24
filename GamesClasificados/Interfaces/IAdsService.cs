@@ -10,7 +10,10 @@ namespace GClaV2.Interfaces
     {
         Ad GetAd(long id);
         IEnumerable<Ad> GetAllAds();
-        IEnumerable<Ad> GetAdsByUser(long userId);
+        IEnumerable<Object> GetAdsByUser(long userId);
+        IEnumerable<Object> GetAdsByUsername(string username);
+        IEnumerable<Object> GetActiveAdsByUser(long userId);
+        IEnumerable<Object> GetActiveAdsByUsername(string username);
         IEnumerable<Object> GetActiveAdsWithFilters(long consoleid, long sectionid);
         bool AddAd(Ad ad);
         bool UpdateAdd(Ad ad);
