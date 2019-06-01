@@ -3,7 +3,7 @@
     <div class="col-xs-12 col-md-6">
       <mat-card>
         <mat-card-header>
-          <mat-card-title>Your contact information</mat-card-title>
+          <mat-card-title>Profile</mat-card-title>
         </mat-card-header>
         <mat-card-content>
           <strong>Name</strong>
@@ -27,24 +27,38 @@
     <div class="col-xs-12 col-md-6">
       <mat-card>
         <mat-card-header>
-          <mat-card-title>Visible Contact Information</mat-card-title>
+          <mat-card-title>Information Visibility</mat-card-title>
         </mat-card-header>
         <mat-card-content>
-          <strong>Show on Ads</strong><br />
+          <strong>Contact</strong>
+          <br />
           <mat-checkbox formControlName="showEmail" class="checkbox-element">Email</mat-checkbox>
           <mat-checkbox formControlName="showTelephone" class="checkbox-element">Telephone</mat-checkbox>
-          <br /><strong>Prefered Contact</strong><br />
+          <br />
+          <strong>Preferred</strong>
+          <br />
           <mat-checkbox formControlName="methodText" class="checkbox-element">Text</mat-checkbox>
           <mat-checkbox formControlName="methodCall" class="checkbox-element">Call</mat-checkbox>
           <mat-checkbox formControlName="methodEmail" class="checkbox-element">Email</mat-checkbox>
           <br />
+          <br />
+          <br />
+          <strong>Link Your Profile</strong>
+          <br />
           <mat-form-field class="">
             <input matInput placeholder="Username" formControlName="username">
-            <mat-hint>To share a link directly to your ads!</mat-hint>
             <mat-error *ngIf="false">
-              This username is already taken.
+              Username is taken.
             </mat-error>
           </mat-form-field>
+          <br />
+          <br />
+          <div *ngIf="username">
+            <label style="padding-right:2em;">Link:</label>
+            <a routerLink="/games/user/{{username}}" routerLinkActive="active">https:/gamesclasificados.com/games/user/{{username}}</a>
+          </div>
+
+
         </mat-card-content>
         <mat-card-subtitle style="color:#ff3333;">
           {{ formErrors.requiredData }}

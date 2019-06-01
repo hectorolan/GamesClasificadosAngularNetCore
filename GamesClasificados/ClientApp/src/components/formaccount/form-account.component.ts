@@ -15,6 +15,7 @@ import { YesCancelDialogComponent } from '../dialogyescancel/yes-cancel-dialog.c
 export class FormAccountComponent implements OnInit {
   @Input()
   user: User;
+  username: string;
   accountSettingForm: FormGroup;
   accountUserForm: any = {
     'name': '',
@@ -61,6 +62,7 @@ export class FormAccountComponent implements OnInit {
       'username': [this.user.username]
     });
     this.accountSettingForm.valueChanges.subscribe(data => this.onValueChanged(data));
+    this.username = this.user.username == '' ? null : this.user.username;
     this.onValueChanged(); // reset validation messages now
   }
 
@@ -128,6 +130,7 @@ export class FormAccountComponent implements OnInit {
         this.snackBar.open('Saved', '', {
           duration: 600
         });
+        this.buildForm();
         this.processing = false;
       }
     });
