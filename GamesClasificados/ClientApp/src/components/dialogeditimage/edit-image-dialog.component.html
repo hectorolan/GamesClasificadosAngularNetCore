@@ -3,10 +3,21 @@
 </h1>
 <mat-dialog-content *ngIf="imgSrc">
   <div class="img-container">
-    <img id="image" #image src="{{imgSrc}}">
+    <img id="image" #image src="{{ imgSrc }}">
   </div>
 </mat-dialog-content>
 <mat-dialog-actions>
-  <button (click)="closeSubmit(true);" mat-raised-button>Save</button>
-  <button (click)="closeSubmit(false);" mat-raised-button>Cancel</button>
+  <button mat-icon-button aria-label="Zoom In" (click)="zoom(.1)">
+    <mat-icon>zoom_in</mat-icon>
+  </button>
+  <button mat-icon-button aria-label="Zoom Out" (click)="zoom(-.1)">
+    <mat-icon>zoom_out</mat-icon>
+  </button>
+  <button mat-icon-button aria-label="Rotate" (click)="rotate(90)">
+    <mat-icon>rotate_right</mat-icon>
+  </button>
+  <div style="margin-left:auto;">
+    <button (click)="closeSubmit(true)" mat-raised-button>Save</button>
+    <button (click)="closeSubmit(false);" mat-raised-button>Cancel</button>
+  </div>
 </mat-dialog-actions>
