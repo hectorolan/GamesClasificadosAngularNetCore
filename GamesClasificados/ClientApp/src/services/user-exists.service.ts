@@ -10,10 +10,16 @@ export class UserExistsService implements IDbContextUserExists {
   // From Interface
   usernameExists(username: string): Promise<boolean> {
     return new Promise((resolve, reject) => {
-      this.http.get<boolean>("api/Users?username=" + username).subscribe(
+      if (username != null && username != "") {
+        this.http.get<boolean>("api/Users?username=" + username).subscribe(
           value => resolve(value),
           error => console.log(JSON.stringify(error))
-        )
-      });
-    }
+        );
+      } else {
+        // For an empty username we will return that does not exists.
+        // The user must be deleting the username
+        resolve(false);
+      }
+    });
+  }
 }
