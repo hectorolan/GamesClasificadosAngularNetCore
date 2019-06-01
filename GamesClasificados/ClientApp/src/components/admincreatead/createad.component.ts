@@ -103,6 +103,19 @@ export class CreateAdComponent implements OnInit {
     });
   }
 
+  onChangeStepper(newStep: string) {
+    switch (newStep) {
+      case 'POST':
+        this.adEmitter.emit(this.adToSave);
+        this.postReady = true;
+        break;
+      case 'PRICE':
+        this.postReady = false;
+        break;
+      default:
+    }
+  }
+
   // Private Methods
   private setConsolesSections(): void {
     if (ConsoleService.consoles) {
