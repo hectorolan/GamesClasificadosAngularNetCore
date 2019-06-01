@@ -20,7 +20,7 @@
       </div>
     </div>
     <span class="spacer-element"></span>
-    <a class="material-icons" *ngIf="isLoggedIn" routerLink="/admin" routerLinkActive="active" title="Account">account_box</a>
+    <a class="material-icons" *ngIf="isLoggedIn" routerLink="/admin" routerLinkActive="active" title="Account" style="color:rgb(255, 140, 0) !important;">account_box</a>
     <a *ngIf="isLoggedIn" mat-button href="account/signout">Sign Out</a>
     <a *ngIf="!isLoggedIn" mat-button href="account/signin">Sign In</a>
   </mat-toolbar>
