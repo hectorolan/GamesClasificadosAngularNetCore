@@ -102,7 +102,7 @@ export class ButtonUpImgAzureComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe((result: any) => {
       if (result['response'] === true) {
-        // Save Image // Update Canvas
+        this.saveImgToStorage(null, result['imageBase64']);
       }
     });
   }
