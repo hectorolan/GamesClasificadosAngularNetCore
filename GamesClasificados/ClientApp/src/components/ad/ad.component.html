@@ -18,7 +18,7 @@
             <span *ngIf="ad.price !== 0" [style.text-decoration]="textDecoration" class="font-normal adtext">${{ ad.price }} <span for="" *ngIf="ad.city !== ''" class="font-normal adtext">{{ad.city}}<br /></span></span>
             <span *ngIf="ad.description" [style.text-decoration]="textDecoration" class="font-normal adtext">{{ad.description}}<br /></span>
             <span *ngIf="ad.ownerName" [style.text-decoration]="textDecoration" class="font-normal adtext">
-              {{ad.ownerName}} (<a *ngIf="ad.username" routerLink="/games/user/{{ad.username}}" routerLinkActive="active"><span [style.text-decoration]="textDecoration" class="font-normal adtext">{{ad.username}}</span></a>)<br />
+              {{ad.ownerName}} <span *ngIf="ad.username">(<a routerLink="/games/user/{{ad.username}}" routerLinkActive="active"><span [style.text-decoration]="textDecoration" class="font-normal adtext">{{ad.username}}</span></a>)</span><br />
             </span>
             <span *ngIf="ad.email" [style.text-decoration]="textDecoration" class="font-normal adtext">email: {{ad.email}}<br /></span>
             <span *ngIf="ad.telephone" [style.text-decoration]="textDecoration" class="font-normal adtext">telephone: {{ad.telephone}}<br /></span>
