@@ -18,9 +18,9 @@ export class ConsolesComponent implements OnInit {
   constructor(private adService: AdService) { }
 
   ngOnInit() {
-    this.adService.getAds(0).then((ads: Ad[]) => {
+    /*this.adService.getAds(0).then((ads: Ad[]) => {
       this.adsEmitter.next(ads);
       this.counter = ads.length;
-    });
+    });*/
   }
 }

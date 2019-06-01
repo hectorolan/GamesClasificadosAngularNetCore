@@ -3,11 +3,19 @@
 }
 
 .image-container {
-  padding-left:8px;
-  padding-right:8px;
-  margin:auto;
-  text-align:center;
-  line-height:200px;
+  padding-left: 8px;
+  padding-right: 8px;
+  margin: auto;
+  text-align: center;
+  line-height: 150px;
+}
+
+.image-container-tight {
+  padding-left: 1px;
+  padding-right: 1px;
+  margin: auto;
+  text-align: center;
+  line-height: 150px;
 }
 
 .image-element {
@@ -20,4 +28,8 @@
   color: inherit;
   text-decoration: inherit;
   text-align: center;
+}
+
+.console-element-holder {
+  padding: 0px;
 }
