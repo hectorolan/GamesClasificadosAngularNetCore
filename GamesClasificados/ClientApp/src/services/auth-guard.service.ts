@@ -11,8 +11,11 @@ export class AuthGuardService implements CanActivate, CanActivateChild, CanLoad 
     constructor(private authService: AuthService, private router: Router) { }
 
     canActivate(router: ActivatedRouteSnapshot, state: RouterStateSnapshot): Promise<boolean> {
-        let url: string = state.url;
-        return this.checkLogin(url);
+      let url: string = state.url;
+      if (!this.authService.isUserLoggedIn()) {
+        this.router.navigate(['/games']);
+      }
+      return this.checkLogin(url);
     }
 
     canActivateChild(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Promise<boolean> {
