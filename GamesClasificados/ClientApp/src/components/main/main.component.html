@@ -1,7 +1,7 @@
 <!-- For Big Screens -->
 <div *ngIf="togglenavService.navMode != 'push'">
   <mat-toolbar color="" class="toolbar-element toolbar-menu">
-    <div *ngIf="consoles" class="tab-container PageMaxSize">
+    <div *ngIf="consoles" class="tab-container-minimized PageMaxSize">
       <a class="tab-element" *ngFor="let console of consoles | hashtoarray;" routerLink="/games/{{console.id}}" routerLinkActive="active" (click)="onMenuSelected();">
         <div>
           {{ console.value }}

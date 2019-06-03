@@ -1,39 +1,41 @@
-<div class="Header" style="backface-visibility: hidden;">
-  <mat-toolbar color="" class="toolbar-element">
-    <button *ngIf="tooglenavService.showNavToggleBtn" mat-icon-button (click)="toggleNav();">
-      <i class="material-icons">menu</i>
-    </button>
-    <span *ngIf="!tooglenavService.showNavToggleBtn" class="tab">
-    </span>
-    <div routerLink="/games" routerLinkActive="active" class="bar">
-      <!--<img src="../../images/GamesClasificadosLogo.png" style="padding: 4px; height:100%;" />-->
-      <!-- The logo will be created with CSS, will be text with color -->
-      <!-- Palete
-    Orange: #ff8c00
-    Red-Violet: #d02090
-    Yellow-Green: #adff2f
-    Blue: #436eee
-    -->
-      <div class="container">
-        <span class="font-format font-GAMES color-orange">Games</span>
-        <span class="font-format2 font-normal color-black">Clasificados</span>
+<div class="col-lg-10 offset-lg-1" style="padding:0px !important;">
+  <div class="Header" style="backface-visibility: hidden;">
+    <mat-toolbar color="" class="toolbar-element">
+      <button *ngIf="tooglenavService.showNavToggleBtn" mat-icon-button (click)="toggleNav();">
+        <i class="material-icons">menu</i>
+      </button>
+      <span *ngIf="!tooglenavService.showNavToggleBtn" class="tab">
+      </span>
+      <div routerLink="/games" routerLinkActive="active" class="bar">
+        <!--<img src="../../images/GamesClasificadosLogo.png" style="padding: 4px; height:100%;" />-->
+        <!-- The logo will be created with CSS, will be text with color -->
+        <!-- Palete
+        Orange: #ff8c00
+        Red-Violet: #d02090
+        Yellow-Green: #adff2f
+        Blue: #436eee
+        -->
+        <div class="container">
+          <span class="font-format font-GAMES color-orange">Games</span>
+          <span class="font-format2 font-normal color-black">Clasificados</span>
+        </div>
       </div>
-    </div>
-    <span class="spacer-element"></span>
-    <a class="material-icons" *ngIf="isLoggedIn" routerLink="/admin" routerLinkActive="active" title="Account" style="color:rgb(255, 140, 0) !important;">account_box</a>
-    <a *ngIf="isLoggedIn" mat-button href="account/signout">Sign Out</a>
-    <a *ngIf="!isLoggedIn" mat-button href="account/signin">Sign In</a>
-  </mat-toolbar>
-</div>
-<div id="main-page" class="C_MAINPAGE" fullscreen>
-  <div id="MainPage">
-    <router-outlet></router-outlet>
+      <span class="spacer-element"></span>
+      <a class="material-icons" *ngIf="isLoggedIn" routerLink="/admin" routerLinkActive="active" title="Account" style="color:rgb(255, 140, 0) !important;">account_box</a>
+      <a *ngIf="isLoggedIn" mat-button href="account/signout">Sign Out</a>
+      <a *ngIf="!isLoggedIn" mat-button href="account/signin">Sign In</a>
+    </mat-toolbar>
   </div>
-  <div id="Footer">
-    <div class="text-center">
-      <button type="button" mat-button routerLink="/games/policy">Policy</button>
-      <button type="button" mat-button routerLink="/games/tos">Terms of Service</button>
-      <button type="button" mat-button routerLink="/games/contactus">Contact Us</button>
+  <div id="main-page" class="C_MAINPAGE" fullscreen>
+    <div id="MainPage">
+      <router-outlet></router-outlet>
+    </div>
+    <div id="Footer">
+      <div class="text-center">
+        <button type="button" mat-button routerLink="/games/policy">Policy</button>
+        <button type="button" mat-button routerLink="/games/tos">Terms of Service</button>
+        <button type="button" mat-button routerLink="/games/contactus">Contact Us</button>
+      </div>
     </div>
   </div>
 </div>
